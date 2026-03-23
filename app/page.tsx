@@ -21,7 +21,7 @@ export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [mouse, setMouse] = useState({ x: 50, y: 50 })
   const [tick, setTick] = useState(0)
-  const raf = useRef<number>()
+  const raf = useRef<number | null>(null);
 
   useEffect(() => {
     setMounted(true)

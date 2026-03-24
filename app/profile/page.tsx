@@ -235,4 +235,17 @@ export default function ProfilePage() {
                             : <button className={`perk-btn ${canAfford ? 'active' : 'disabled'}`} onClick={() => handleRedeem(perk)}>
                                 {canAfford ? 'Redeem' : `Need ${perk.cost - credits} more`}
                               </button>
-                          
+                          }
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}

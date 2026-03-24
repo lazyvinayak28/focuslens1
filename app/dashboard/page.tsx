@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 export default async function DashboardPage() {
-  const { userId } = await auth()
+  const { userId } = await auth();
   if (!userId) redirect('/sign-in')
 
   return <FocusApp />

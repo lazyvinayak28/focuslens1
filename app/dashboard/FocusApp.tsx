@@ -5,7 +5,6 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import Script from 'next/script'
 import CosmicTopbar from '../CosmicTopbar'
 import { loadCredits } from '../../lib/firestoreHelpers'
-
 const DAILY_QUOTES = [
   { text: "The successful warrior is the average man, with laser-like focus.", author: "Bruce Lee" },
   { text: "Concentrate all your thoughts upon the work at hand.", author: "Alexander Graham Bell" },
@@ -41,6 +40,11 @@ const DAILY_QUOTES = [
 ]
 
 export default function FocusApp() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const { user } = useUser()
   const { signOut } = useClerk()
   const injected = useRef(false)
@@ -95,6 +99,8 @@ export default function FocusApp() {
     }
   }, [user, signOut])
 
+  if (!mounted) return <div className="min-h-screen bg-black" />;
+  
   return (
     <>
       <style>{`

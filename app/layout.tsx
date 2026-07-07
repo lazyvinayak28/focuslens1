@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-
+import "./cosmic.css";  
 export const metadata: Metadata = {
   title: "FocusLens",
   description: "Focus on what matters",
